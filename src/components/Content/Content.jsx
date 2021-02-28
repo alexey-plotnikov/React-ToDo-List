@@ -1,14 +1,14 @@
 import React from "react";
 
-import HeaderComponent from "components/Header/Header";
-import ToDoListComponent from "components/ToDoList/ToDoList";
+import HeaderContainer from "containers/HeaderContainer/HeaderContainer";
+import TodoListComponent from "components/TodoList/TodoList";
 import "./Content.scss";
 
 const ContentComponent = (props) => {
   return (
     <div className="content-component">
-      <HeaderComponent />
-      <ToDoListComponent />
+      <HeaderContainer />
+      <TodoListComponent />
     </div>
   );
 };

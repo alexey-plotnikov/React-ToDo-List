@@ -1,15 +1,15 @@
 import React from "react";
 
-import ToDoItemComponent from "components/ToDoItem/ToDoItem";
+import TodoItemComponent from "components/TodoItem/TodoItem";
 import "./ToDoList.scss";
 
-const ToDoListComponent = (props) => {
+const TodoListComponent = (props) => {
   return (
     <div className="to-do-list-component">
-      <ToDoItemComponent />
-      <ToDoItemComponent />
+      <TodoItemComponent />
+      <TodoItemComponent />
     </div>
   );
 };
 
-export default ToDoListComponent;
+export default TodoListComponent;

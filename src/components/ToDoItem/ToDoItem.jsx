@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./ToDoItem.scss";
+import "./TodoItem.scss";
 
-const ToDoItemComponent = (props) => {
+const TodoItemComponent = (props) => {
   return (
     <div className="to-do-item-component">
         works
@@ -10,4 +10,4 @@ const ToDoItemComponent = (props) => {
   );
 };
 
-export default ToDoItemComponent;
+export default TodoItemComponent;
