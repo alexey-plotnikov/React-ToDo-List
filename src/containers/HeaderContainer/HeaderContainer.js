@@ -1,6 +1,15 @@
 import React from "react";
 
+import { connect } from "react-redux";
+import { addTodo } from "actions/actions";
+
 import HeaderComponent from "components/Header/Header";
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTodo: (todo) => dispatch(addTodo(todo)),
+  };
+};
 
 class HeaderContainer extends React.Component {
   constructor(props) {
@@ -16,7 +25,10 @@ class HeaderContainer extends React.Component {
   };
 
   handleSubmit = () => {
-
+    const { todoText } = this.state;
+    const { addTodo } = this.props;
+    addTodo({ todoText });
+    this.setState({ todoText: "" });
   };
 
   render() {
@@ -32,4 +44,4 @@ class HeaderContainer extends React.Component {
   }
 }
 
-export default HeaderContainer;
+export default connect(null, mapDispatchToProps)(HeaderContainer);

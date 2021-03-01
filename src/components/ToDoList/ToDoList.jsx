@@ -1,7 +1,7 @@
 import React from "react";
 
 import TodoItemComponent from "components/TodoItem/TodoItem";
-import "./ToDoList.scss";
+import "./TodoList.scss";
 
 const TodoListComponent = (props) => {
   return (
