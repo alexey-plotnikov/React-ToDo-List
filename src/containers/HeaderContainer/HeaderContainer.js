@@ -16,7 +16,7 @@ class HeaderContainer extends React.Component {
     super(props);
 
     this.state = {
-      todoText: "",
+      todoMessage: "",
     };
   }
 
@@ -25,18 +25,18 @@ class HeaderContainer extends React.Component {
   };
 
   handleSubmit = () => {
-    const { todoText } = this.state;
+    const { todoMessage } = this.state;
     const { addTodo } = this.props;
-    addTodo({ todoText });
-    this.setState({ todoText: "" });
+    addTodo({ todoMessage });
+    this.setState({ todoMessage: "" });
   };
 
   render() {
-    const { todoText } = this.state;
+    const { todoMessage } = this.state;
 
     return (
       <HeaderComponent
-        todoText={todoText}
+        todoMessage={todoMessage}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
       />

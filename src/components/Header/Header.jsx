@@ -3,15 +3,15 @@ import React from "react";
 import "./Header.scss";
 
 const HeaderComponent = (props) => {
-  const { todoText, handleChange, handleSubmit } = props;
+  const { todoMessage, handleChange, handleSubmit } = props;
 
   return (
     <div className="header-component">
       <input
         className="todo-input"
         type="text"
-        name="todoText"
-        value={todoText}
+        name="todoMessage"
+        value={todoMessage}
         onChange={handleChange}
       />
       <div className="add-todo-button" onClick={handleSubmit}>
