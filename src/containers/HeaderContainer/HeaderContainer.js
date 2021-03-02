@@ -7,7 +7,7 @@ import HeaderComponent from "components/Header/Header";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addTodo: (todo) => dispatch(addTodo(todo)),
+    addTodo: (todo) => dispatch(addTodo(todo.message)),
   };
 };
 
@@ -16,7 +16,7 @@ class HeaderContainer extends React.Component {
     super(props);
 
     this.state = {
-      todoMessage: "",
+      message: "",
     };
   }
 
@@ -25,18 +25,18 @@ class HeaderContainer extends React.Component {
   };
 
   handleSubmit = () => {
-    const { todoMessage } = this.state;
+    const { message } = this.state;
     const { addTodo } = this.props;
-    addTodo({ todoMessage });
-    this.setState({ todoMessage: "" });
+    addTodo({ message });
+    this.setState({ message: "" });
   };
 
   render() {
-    const { todoMessage } = this.state;
+    const { message } = this.state;
 
     return (
       <HeaderComponent
-        todoMessage={todoMessage}
+        message={message}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
       />

@@ -4,22 +4,18 @@ import { connect } from "react-redux";
 import TodoItemComponent from "components/TodoItem/TodoItem";
 import "./TodoList.scss";
 
-const mapStateToProps = (state) => {
-  return { todos: state.todos };
-};
-
 const TodoListComponent = (props) => {
-  const { todos } = props;
+  const { todos, handleClick } = props;
 
   return (
     <div className="to-do-list-component">
       {todos.map((todo) => (
         <div className="to-do-item" key={todo.id}>
-          <TodoItemComponent message={todo.message} />
+          <TodoItemComponent {...todo} onClick={() => handleClick(todo.id)}/>
         </div>
       ))}
     </div>
   );
 };
 
-export default connect(mapStateToProps)(TodoListComponent);
+export default connect()(TodoListComponent);

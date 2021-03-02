@@ -1,4 +1,12 @@
 .to-do-item-component {
   display: flex;
   flex-direction: row;
+
+  .to-do-item-message {
+    text-decoration: none;
+  }
+
+  .is-completed {
+    text-decoration: line-through;
+  }
 }
