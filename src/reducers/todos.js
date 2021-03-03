@@ -22,6 +22,8 @@ const todos = (state = [], action) => {
           completed: !todo.completed,
         };
       });
+    case ACTIONS.DELETE_TODO:
+      return state.filter((todo) => todo.id !== action.id);
     default:
       return state;
   }

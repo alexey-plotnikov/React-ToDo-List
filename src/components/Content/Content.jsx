@@ -2,6 +2,7 @@ import React from "react";
 
 import HeaderContainer from "containers/HeaderContainer/HeaderContainer";
 import TodoListContainer from "containers/TodoListContainer/TodoListContainer";
+import FooterContainer from "containers/FooterContainer/FooterContainer";
 import "./Content.scss";
 
 const ContentComponent = (props) => {
@@ -9,6 +10,7 @@ const ContentComponent = (props) => {
     <div className="content-component">
       <HeaderContainer />
       <TodoListContainer />
+      <FooterContainer />
     </div>
   );
 };

@@ -1,12 +1,30 @@
 .to-do-item-component {
   display: flex;
   flex-direction: row;
+  padding: 10px 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
 
   .to-do-item-message {
+    margin-right: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .not-completed {
     text-decoration: none;
   }
 
   .is-completed {
+    color: red;
     text-decoration: line-through;
+  }
+
+  .to-do-item-delete-button {
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

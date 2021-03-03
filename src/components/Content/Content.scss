@@ -1,6 +1,10 @@
 .content-component {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 600px;
+  margin: auto;
+  background-color: lightgray;
 }

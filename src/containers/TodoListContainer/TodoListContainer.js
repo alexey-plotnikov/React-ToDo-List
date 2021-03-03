@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { toggleTodo } from "actions/actions";
+import { toggleTodo, deleteTodo } from "actions/actions";
 
 import TodoListComponent from "components/TodoList/TodoList";
 
@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleTodo: (todo) => dispatch(toggleTodo(todo.id)),
+    deleteTodo: (todo) => dispatch(deleteTodo(todo.id)),
   };
 };
 
@@ -20,15 +21,26 @@ class TodoListContainer extends React.Component {
     super(props);
   }
 
-  handleClick = (id) => {
+  handleTodoToggling = (id) => {
     const { toggleTodo } = this.props;
     toggleTodo({ id });
+  };
+
+  handleTodoDeleting = (id) => {
+    const { deleteTodo } = this.props;
+    deleteTodo({ id });
   };
 
   render() {
     const { todos } = this.props;
 
-    return <TodoListComponent todos={todos} handleClick={this.handleClick} />;
+    return (
+      <TodoListComponent
+        todos={todos}
+        handleTodoToggling={this.handleTodoToggling}
+        handleTodoDeleting={this.handleTodoDeleting}
+      />
+    );
   }
 }
 

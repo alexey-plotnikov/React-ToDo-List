@@ -5,13 +5,17 @@ import TodoItemComponent from "components/TodoItem/TodoItem";
 import "./TodoList.scss";
 
 const TodoListComponent = (props) => {
-  const { todos, handleClick } = props;
+  const { todos, handleTodoToggling, handleTodoDeleting } = props;
 
   return (
     <div className="to-do-list-component">
       {todos.map((todo) => (
         <div className="to-do-item" key={todo.id}>
-          <TodoItemComponent {...todo} onClick={() => handleClick(todo.id)}/>
+          <TodoItemComponent
+            {...todo}
+            handleTodoToggling={() => handleTodoToggling(todo.id)}
+            handleTodoDeleting={() => handleTodoDeleting(todo.id)}
+          />
         </div>
       ))}
     </div>

@@ -1,0 +1,12 @@
+.footer-component {
+  display: flex;
+  flex-direction: row;
+
+  .visibility-filter-button {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
