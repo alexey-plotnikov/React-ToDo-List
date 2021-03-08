@@ -1,14 +1,14 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { addTodo } from "actions/actions";
+import { setVisibilityFilter } from "actions/actions";
 
 import FooterComponent from "components/FooterComponent/FooterComponent";
 
 const mapDispatchToProps = (dispatch) => {
-  // return {
-  //   addTodo: (todo) => dispatch(addTodo(todo.message)),
-  // };
+  return {
+    setVisibilityFilter: (filter) => dispatch(setVisibilityFilter(filter)),
+  };
 };
 
 class FooterContainer extends React.Component {
@@ -17,11 +17,12 @@ class FooterContainer extends React.Component {
   }
 
   handleVisibilityFilter = (filter) => {
-    console.log(filter);
-  }
+    const { setVisibilityFilter } = this.props;
+    setVisibilityFilter(filter);
+  };
 
   render() {
-    return <FooterComponent handleVisibilityFilter={this.handleVisibilityFilter}/>;
+    return <FooterComponent handleVisibilityFilter={this.handleVisibilityFilter} />;
   }
 }
 

@@ -2,11 +2,11 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { toggleTodo, deleteTodo } from "actions/actions";
-
+import { VISIBILITY_FILTERS } from "common/constants";
 import TodoListComponent from "components/TodoList/TodoList";
 
 const mapStateToProps = (state) => {
-  return { todos: state.todos };
+  return { todos: state.todos, filter: state.visibilityFilter };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -31,12 +31,25 @@ class TodoListContainer extends React.Component {
     deleteTodo({ id });
   };
 
+  getVisibleTodos(todos, filter) {
+    switch (filter) {
+      case VISIBILITY_FILTERS.SHOW_ALL:
+        return todos;
+      case VISIBILITY_FILTERS.SHOW_COMPLETED:
+        return todos.filter((t) => t.completed);
+      case VISIBILITY_FILTERS.SHOW_ACTIVE:
+        return todos.filter((t) => !t.completed);
+      default:
+        break;
+    }
+  }
+
   render() {
-    const { todos } = this.props;
+    const visibleTodos = this.getVisibleTodos(this.props.todos, this.props.filter);
 
     return (
       <TodoListComponent
-        todos={todos}
+        todos={visibleTodos}
         handleTodoToggling={this.handleTodoToggling}
         handleTodoDeleting={this.handleTodoDeleting}
       />
