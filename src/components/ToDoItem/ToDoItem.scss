@@ -1,16 +1,27 @@
 .to-do-item-component {
   display: flex;
   flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 90%;
   padding: 10px 15px;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #808080;
+  margin-top: 5px;
 
-  .to-do-item-message {
-    margin-right: auto;
-
+  .to-do-item-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .to-do-item-message {
+    margin-right: auto;
   }
 
   .not-completed {
@@ -18,11 +29,12 @@
   }
 
   .is-completed {
-    color: red;
     text-decoration: line-through;
   }
 
   .to-do-item-delete-button {
+    font-size: 20px;
+
     &:hover {
       cursor: pointer;
     }

@@ -1,5 +1,6 @@
 import React from "react";
 
+import { HEADER_CONSTANTS } from "common/constants";
 import "./Header.scss";
 
 const HeaderComponent = (props) => {
@@ -11,11 +12,12 @@ const HeaderComponent = (props) => {
         className="todo-input"
         type="text"
         name="message"
+        placeholder={HEADER_CONSTANTS.NEW_TASK}
         value={message}
         onChange={handleChange}
       />
       <div className="add-todo-button" onClick={handleSubmit}>
-        ADD TODO
+        {HEADER_CONSTANTS.ADD_TODO}
       </div>
     </div>
   );

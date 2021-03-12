@@ -27,6 +27,9 @@ class HeaderContainer extends React.Component {
   handleSubmit = () => {
     const { message } = this.state;
     const { addTodo } = this.props;
+    if (!message.trim()) {
+      return;
+    }
     addTodo({ message });
     this.setState({ message: "" });
   };

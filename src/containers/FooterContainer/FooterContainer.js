@@ -3,7 +3,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { setVisibilityFilter } from "actions/actions";
 
-import FooterComponent from "components/FooterComponent/FooterComponent";
+import FooterComponent from "components/Footer/Footer";
+
+const mapStateToProps = (state) => {
+  return { filter: state.visibilityFilter };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -22,8 +26,10 @@ class FooterContainer extends React.Component {
   };
 
   render() {
-    return <FooterComponent handleVisibilityFilter={this.handleVisibilityFilter} />;
+    const { filter } = this.props;
+
+    return <FooterComponent handleVisibilityFilter={this.handleVisibilityFilter} filter={filter} />;
   }
 }
 
-export default connect(null, mapDispatchToProps)(FooterContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(FooterContainer);

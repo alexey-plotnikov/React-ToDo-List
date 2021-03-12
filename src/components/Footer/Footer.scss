@@ -1,0 +1,47 @@
+.footer-component {
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .visibility-filter-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    border: 1px solid #808080;
+    border-left: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+
+    &:first-child {
+      border-left: 1px solid #808080;
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #0076ff;
+      color: #ffffff;
+    }
+  }
+
+  .is-active {
+    background-color: #0076ff;
+    color: #ffffff;
+  }
+
+  .not-active {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
